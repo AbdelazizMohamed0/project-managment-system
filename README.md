@@ -213,8 +213,6 @@ User
   - Improves test realism
 
 ### UI and Frontend
-  - Responsive design
-  - Modern UI components
 
 - **Turbo**: Hotwire's SPA-like page accelerator
   - Improves page load times
@@ -231,9 +229,6 @@ User
 
 
 ### Development and Deployment
-- **Kamal**: Deployment
-  - Simplifies application deployment
-  - Docker container support
 
 - **Brakeman**: Security analysis
   - Identifies security vulnerabilities
