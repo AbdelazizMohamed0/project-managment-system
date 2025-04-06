@@ -1,0 +1,49 @@
+<div class="max-w-md mx-auto">
+  <div class="bg-white rounded-lg shadow p-6">
+    <h1 class="text-3xl font-bold mb-6">Sign Up</h1>
+
+    <%= form_with(model: @user, local: true) do |f| %>
+      <% if @user.errors.any? %>
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+          <h2 class="font-bold mb-2">
+            <%= pluralize(@user.errors.count, "error") %> prohibited sign up:
+          </h2>
+          <ul class="list-disc list-inside">
+            <% @user.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="mb-4">
+        <%= f.label :name, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.text_field :name, class: "w-full border rounded px-3 py-2" %>
+      </div>
+
+      <div class="mb-4">
+        <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.email_field :email, class: "w-full border rounded px-3 py-2" %>
+      </div>
+
+      <div class="mb-4">
+        <%= f.label :password, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.password_field :password, class: "w-full border rounded px-3 py-2" %>
+      </div>
+
+      <div class="mb-6">
+        <%= f.label :password_confirmation, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.password_field :password_confirmation, class: "w-full border rounded px-3 py-2" %>
+      </div>
+
+      <div>
+        <%= f.submit "Sign Up", class: "w-full bg-blue-500 text-white px-4 py-2 rounded" %>
+      </div>
+    <% end %>
+
+    <div class="mt-4 text-center">
+      Already have an account?
+      <%= link_to "Log In", new_session_path, class: "text-blue-500 hover:text-blue-700" %>
+    </div>
+  </div>
+</div>

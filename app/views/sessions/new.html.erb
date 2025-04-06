@@ -1,0 +1,26 @@
+<div class="max-w-md mx-auto">
+  <div class="bg-white rounded-lg shadow p-6">
+    <h1 class="text-3xl font-bold mb-6">Login</h1>
+
+    <%= form_with(url: session_path, local: true) do |f| %>
+      <div class="mb-4">
+        <%= f.label :email, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.email_field :email, class: "w-full border rounded px-3 py-2" %>
+      </div>
+
+      <div class="mb-6">
+        <%= f.label :password, class: "block text-gray-700 text-sm font-bold mb-2" %>
+        <%= f.password_field :password, class: "w-full border rounded px-3 py-2" %>
+      </div>
+
+      <div>
+        <%= f.submit "Login", class: "w-full bg-blue-500 text-white px-4 py-2 rounded" %>
+      </div>
+    <% end %>
+
+    <div class="mt-4 text-center">
+      Don't have an account?
+      <%= link_to "Sign Up", new_user_path, class: "text-blue-500 hover:text-blue-700" %>
+    </div>
+  </div>
+</div>
